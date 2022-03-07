@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*POUR CENTRER LES ÉLÉMENTS*/
+#content { /*div parent*/
+    display: flex;
+    justify-content: center;
+}
+
+#milieu { /*div enfant*/
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5%;
+   
+}
+
+h1 {
+    color: #0A71C2;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1500;
+    margin-bottom: 5px;
+}
+
+p {
+    background-color: #BCBCBD;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 3px;
+    padding: 5px;
+
+}
+

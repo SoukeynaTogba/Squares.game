@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="squaresgame.css">
+    <title>Le jeu des carrés</title>
+</head>
+<body>
+
+
+    <section id="content">
+        <div id="milieu">
+            <h1> The game of squares of chance </h1>
+            <p> Raffraichissez la page, et en pariant sur l'une d'entre elles, essayez de deviner dans quel case se trouverons les prochains carrés . 
+                <br> À vos marques... prêts... pariez !!! </p>
+
+            <canvas width="600" height="600"></canvas> <!--taille du canvas ou l'on dessine-->
+        </div>
+    </section>
+
+
+    <script>
+
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+
+        
+        
+        for (let i = 0; i < 5; i++) { //on crée une boucle qui commence à 0, se répète 5fois, et s'incrémente de 1 en 1
+            for (let j = 0; j < 5; j++) {  //à noter, la boucle se repetera 25 fois car 5x5
+
+            
+                const hauteur = 60;
+                const largeur = 60;
+                const ecart = 20;
+                let x = 100 + (hauteur + ecart) * i; //sert à ce que les carré ne soient pas superposé
+                let y = 100 + (hauteur + ecart) * j; //sert à ce que les carré ne soient pas superposé
+
+                context.beginPath();
+                context.rect(x, y, hauteur, largeur); //création du carré. 
+                context.stroke(); //ajout du carré sur la page
+
+                
+                if (Math.random() > 0.5) { //on execute seulement si math.random est superieur à 0.5. le resultat de math.random change à chaque fois, elle inclue le hasard
+                context.beginPath();
+                context.rect(x + 8, y + 8, largeur - 16, hauteur - 16); //création du carré plus petit
+                context.stroke(); //ajout du carré petit sur la page
+                }
+
+               
+
+            }
+
+    
+        }
+
+    
+        
+    </script>
+</body>
+</html>
